@@ -1,18 +1,18 @@
-elfCalories = []
-totalCalories = []
+elf_calories = []
+total_calories = []
 
 with open("./input.txt") as input_file:
     for line in input_file:
         if line.strip().isnumeric():
             calories = int(line)
-            elfCalories.append(calories)
+            elf_calories.append(calories)
         else:
-            totalCalories.append(sum(elfCalories))
-            elfCalories = []
+            total_calories.append(sum(elf_calories))
+            elf_calories = []
 
-if len(elfCalories) > 0:
-    totalCalories.append(sum(elfCalories))
+if len(elf_calories) > 0:
+    total_calories.append(sum(elf_calories))
 
-totalCalories.sort(reverse=True)
-result = sum(totalCalories[0:3])
+total_calories.sort(reverse=True)
+result = sum(total_calories[0:3])
 print(result)

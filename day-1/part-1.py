@@ -1,14 +1,16 @@
-elfCalories = []
-maxCalories = 0
+elf_calories = []
+max_calories = 0
 
 with open("input.txt") as input_file:
     for line in input_file:
         if line.strip().isnumeric():
             calories = int(line)
-            elfCalories.append(calories)
+            elf_calories.append(calories)
         else:
-            totalCalories = sum(elfCalories)
-            maxCalories = totalCalories if totalCalories > maxCalories else maxCalories
-            elfCalories = []
+            total_calories = sum(elf_calories)
+            max_calories = (
+                total_calories if total_calories > max_calories else max_calories
+            )
+            elf_calories = []
 
-print(maxCalories)
+print(max_calories)
