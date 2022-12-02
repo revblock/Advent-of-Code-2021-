@@ -26,12 +26,12 @@ score = 0
 with open("input.txt") as input_file:
     for line in input_file:
         opponent, player = line.strip().split()
-        opponentPlay = next(filter(lambda x: x.opponent == opponent, plays))
-        playerPlay = next(filter(lambda x: x.player == player, plays))
-        score += playerPlay.score
-        if playerPlay.beats == opponentPlay:
+        opponent_play = next(filter(lambda x: x.opponent == opponent, plays))
+        player_play = next(filter(lambda x: x.player == player, plays))
+        score += player_play.score
+        if player_play.beats == opponent_play:
             score += win
-        elif playerPlay == opponentPlay:
+        elif player_play == opponent_play:
             score += draw
         else:
             score += loss
