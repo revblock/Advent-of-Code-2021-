@@ -37,7 +37,6 @@ for instruction in instructions:
     for _ in range(count):
         item = stacks[move_from - 1].pop(0)
         items_to_move.append(item)
-        # stacks[move_to - 1].insert(0, item)
 
     items_to_move.reverse()
 
