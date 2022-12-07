@@ -20,12 +20,14 @@ with open("./input.txt") as input_file:
 
         if parts[0] == "cd":
             pwd = cd(pwd, parts[1])
-            if str(pwd) not in paths:
-                paths[str(pwd)] = 0
+            pwd_str = str(pwd)
+            if pwd_str not in paths:
+                paths[pwd_str] = 0
 
         if parts[0][0].isdigit():
-            paths[str(pwd)] += int(parts[0])
-            file_pwd = pathlib.Path(str(pwd))
+            pwd_str = str(pwd)
+            paths[pwd_str] += int(parts[0])
+            file_pwd = pathlib.Path(pwd_str)
             while str(file_pwd) != "/":
                 paths[str(file_pwd.parent)] += int(parts[0])
                 file_pwd = file_pwd.parent
