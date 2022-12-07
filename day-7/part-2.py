@@ -30,11 +30,7 @@ with open("./input.txt") as input_file:
                 paths[str(file_pwd.parent)] += int(parts[0])
                 file_pwd = file_pwd.parent
 
-disk_size = 70_000_000
-minimum_space = 30_000_000
-
-current_free_space = disk_size - paths["/"]
-amount_to_delete = minimum_space - current_free_space
+amount_to_delete = 30_000_000 - (70_000_000 - paths["/"])
 possible_for_deletion = {k: v for k,
                          v in paths.items() if v >= amount_to_delete}
 print(min(possible_for_deletion.values()))
